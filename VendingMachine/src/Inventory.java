@@ -10,9 +10,8 @@ public class Inventory {
 
      */
     public static HashMap<String,List<String>> pairs = new HashMap<>(); //for now, we will not keep track of the items
-    public static int itemCheck = 5;
     public static void initializeInventory(){
-        pairs.put("A1",Arrays.asList("1","Doritos"));
+        pairs.put("A1",Arrays.asList("5","Doritos"));
         pairs.put("A2",Arrays.asList("5","Pringles"));
         pairs.put("A3",Arrays.asList("5","Pretzels"));
         pairs.put("B1",Arrays.asList("5","Coke"));
@@ -33,8 +32,6 @@ public class Inventory {
         int check = Integer.parseInt(pairs.get(id).set(0,String.valueOf(count))); //updates
         if(check == 0){
             System.out.println("Sorry this is out of stock. Come again later!");
-            itemCheck = 0;
-            return;
         }
         else{
             System.out.println("Here is the " + pairs.get(id).get(1));

@@ -28,10 +28,6 @@ public class Money extends Inventory{
              System.out.println("this is not valid.");
              return -1;
          }
-        if(itemCheck == 0){
-            System.out.println("Here is your money back" + amount);
-            return amount;
-        }
          while(amount < priceOfItem.get(id)){
              amount += Double.parseDouble(input.nextLine());
              if (amount == priceOfItem.get(id)){
