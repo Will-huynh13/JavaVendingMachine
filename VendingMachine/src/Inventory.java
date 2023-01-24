@@ -10,9 +10,9 @@ public class Inventory {
 
      */
     public static HashMap<String,List<String>> pairs = new HashMap<>(); //for now, we will not keep track of the items
-
+    public static int itemCheck = 5;
     public static void initializeInventory(){
-        pairs.put("A1",Arrays.asList("5","Doritos"));
+        pairs.put("A1",Arrays.asList("1","Doritos"));
         pairs.put("A2",Arrays.asList("5","Pringles"));
         pairs.put("A3",Arrays.asList("5","Pretzels"));
         pairs.put("B1",Arrays.asList("5","Coke"));
@@ -30,13 +30,24 @@ public class Inventory {
         int count = Integer.parseInt(pairs.get(id).get(0)); //number of items left in the machine
         //remove the amount taken out of it
         count--;
-        pairs.get(id).set(0,String.valueOf(count));
-        if(count == 0){
+        int check = Integer.parseInt(pairs.get(id).set(0,String.valueOf(count))); //updates
+        if(check == 0){
             System.out.println("Sorry this is out of stock. Come again later!");
+            itemCheck = 0;
+            return;
         }
         else{
             System.out.println("Here is the " + pairs.get(id).get(1));
         }
+    }
+    public void showInventory(){
+        String[] id = {"A1","A2","A3","B1","B2","B3","C1","C2","C3","D1","D2","D3"};
+        for (int i = 0; i < 12; i++){
+            System.out.println("For " + pairs.get(id[i]).get(1) + " and there are " +
+                    Integer.parseInt(pairs.get(id[i]).get(0)) + " left");
+        }
+
+
     }
 
 }
