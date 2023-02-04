@@ -28,7 +28,12 @@ public class Money {
             }
         }
         change = amount - costMap.get(id);
-        Inventory.dispense(id);
-        System.out.println("Change back: " + change);
+        if(change != 0){
+            Inventory.dispense(id);
+            System.out.println("Change back: $" + String.format("%.2f",change));
+        }
+        else{
+            Inventory.dispense(id);
+        }
     }
 }

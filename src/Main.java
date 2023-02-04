@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     /*
         The plan:
+
         3 classes, one to manage the inventory, one to manage the money, one to manage the display
 
         Main class will just be objects and their corresponding methods
@@ -13,7 +14,7 @@ public class Main {
         Dispense method - returns the requested item the user inputted
 
         MONEY CLASS:
-        Hashmap to store the ID of the item and linking it to inventory
+        Hashmap to store the ID of the item, and it is "parallel"  to inventory
         Cashback method
 
         DISPLAY CLASS:
@@ -23,13 +24,12 @@ public class Main {
      */
     public static void main(String[] args) {
         Display d = new Display();
-        Inventory inventory = new Inventory();
-        Money money = new Money();
+        new Inventory();
+        new Money();
         Scanner input = new Scanner(System.in);
-        String item ="";
         while(d.loop){
             d.showMenu();
-            item = input.nextLine().toUpperCase();
+            String item = input.nextLine().toUpperCase();
             d.takingUserInput(item);
         }
     }
