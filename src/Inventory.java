@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Inventory {
-    //a hashmap that looks like this {"ID",["5","NAME]}
+    //a hashmap that looks like this {"ID",["5","NAME"]}
    public static HashMap<String, List<String>> inventoryMap = new HashMap<>();
 
     public Inventory(){ //initializes the hashmap with items

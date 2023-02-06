@@ -47,7 +47,7 @@ public class Display{
                 " the price of this item is $" + String.format("%.2f",(Money.costMap.get(id))));
     }
 
-    public Double promptUser(){
+    public double promptUser(){
         double amount = 0.0;
         Scanner str = new Scanner(System.in);
         System.out.println("Insert cash...");
